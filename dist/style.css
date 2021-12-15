@@ -1,0 +1,70 @@
+:root {
+  --font-body: Arial, sans-serif;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+form {
+  margin-bottom: 3.125rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 18.75rem;
+}
+main .primary-weather-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  margin-bottom: 1.25rem;
+}
+main .primary-weather-data .location {
+  display: flex;
+  justify-content: center;
+}
+main .primary-weather-data .max-min-temperatures {
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+}
+main .secondary-weather-data {
+  display: grid;
+  grid-template-columns: repeat(2, 4.6875rem);
+  gap: 0.3125rem;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */

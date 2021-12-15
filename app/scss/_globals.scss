@@ -1,0 +1,68 @@
+@use "functions" as *;
+@use "variables" as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+form {
+  margin-bottom: rem(50);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: rem(300);
+
+  .primary-weather-data {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    margin-bottom: rem(20);
+
+    .location {
+      display: flex;
+      justify-content: center;
+    }
+
+    .max-min-temperatures {
+      display: flex;
+      justify-content: center;
+      gap: rem(10);
+    }
+  }
+
+  .secondary-weather-data {
+    display: grid;
+    grid-template-columns: repeat(2, rem(75));
+    gap: rem(5);
+    margin: 0 auto;
+  }
+}
