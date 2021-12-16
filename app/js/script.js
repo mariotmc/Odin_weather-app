@@ -142,4 +142,4 @@ const displayWeather = (obj) => {
   main.appendChild(secondaryWeatherData);
 };
 
-window.onload(getWeather("London"));
+window.onload = getWeather("London");
