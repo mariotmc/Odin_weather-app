@@ -1,13 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 :root {
-  --font-body: Arial, sans-serif;
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Roboto", sans-serif;
 }
 
 :root {
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
+  --primary-bg: cornflowerblue;
+  --secondary-bg: #abc4ff;
+  --font-color: #212529;
 }
 
 html {
+  width: 100%;
   font-size: 100%;
   box-sizing: border-box;
 }
@@ -19,14 +23,20 @@ html {
 }
 
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--secondary-bg);
+  color: var(--font-color);
 }
 
 h1,
 h2,
-h3 {
-  margin-top: 0;
+h3,
+h4,
+h5 {
+  margin: 0;
   line-height: 1.1;
 }
 
@@ -36,26 +46,77 @@ a:active {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4.6875rem;
+  padding: 3.125rem 1.25rem;
+  background-color: var(--primary-bg);
+  color: white;
+  font-family: var(--font-title);
+}
+header .fa-cloud-sun::before {
+  font-size: 2.5rem;
+  font-family: "Font Awesome 5 Free";
+}
+header .fa-cloud-sun {
+  margin: auto;
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+}
+
 form {
-  margin-bottom: 3.125rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6.25rem;
+}
+@media (max-width: 28.125rem) {
+  form {
+    margin-bottom: 2.5rem;
+  }
+}
+form #city {
+  padding: 0.3125rem;
+  color: var(--font-color);
+  background-color: #efefef;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  border: 0.1875rem solid var(--primary-bg);
+  border-radius: 0.3125rem;
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
+  padding: 1.875rem;
   text-align: center;
-  width: 18.75rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5rem;
+  background-color: cornflowerblue;
+  border-radius: 0.625rem;
 }
 main .primary-weather-data {
   display: flex;
   flex-direction: column;
   gap: 0.3125rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.875rem;
+}
+main .primary-weather-data h5 {
+  font-size: 1.375rem;
 }
 main .primary-weather-data .location {
   display: flex;
   justify-content: center;
+  font-size: 1.875rem;
+}
+main .primary-weather-data .temperature {
+  font-size: 3.125rem;
 }
 main .primary-weather-data .max-min-temperatures {
   display: flex;
@@ -64,7 +125,49 @@ main .primary-weather-data .max-min-temperatures {
 }
 main .secondary-weather-data {
   display: grid;
-  grid-template-columns: repeat(2, 4.6875rem);
-  gap: 0.3125rem;
+  grid-template-columns: repeat(1fr);
+  gap: 2.5rem;
   margin: 0 auto;
+}
+@media (min-width: 28.125rem) {
+  main .secondary-weather-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 50rem) {
+  main .secondary-weather-data {
+    display: flex;
+    justify-content: center;
+  }
+  main .secondary-weather-data img {
+    margin: auto;
+  }
+}
+main .secondary-weather-data label {
+  font-size: 1.25rem;
+}
+main .secondary-weather-data h5 {
+  font-size: 1.5rem;
+}
+main .secondary-weather-data img {
+  margin: auto auto auto 0;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+main .secondary-weather-data .feels-like-container,
+main .secondary-weather-data .humidity-container,
+main .secondary-weather-data .wind-speed-container,
+main .secondary-weather-data .pressure-container {
+  display: flex;
+  gap: 0.3125rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.125rem;
+  background-color: var(--primary-bg);
 }/*# sourceMappingURL=style.css.map */

@@ -2,6 +2,7 @@
 @use "variables" as *;
 
 html {
+  width: 100%;
   font-size: 100%;
   box-sizing: border-box;
 }
@@ -13,14 +14,20 @@ html {
 }
 
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--secondary-bg);
+  color: var(--font-color);
 }
 
 h1,
 h2,
-h3 {
-  margin-top: 0;
+h3,
+h4,
+h5 {
+  margin: 0;
   line-height: 1.1;
 }
 
@@ -30,26 +37,79 @@ a:active {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: rem(75);
+  padding: rem(50) rem(20);
+  background-color: var(--primary-bg);
+  color: white;
+  font-family: var(--font-title);
+
+  .fa-cloud-sun::before {
+    font-size: rem(40);
+    font-family: "Font Awesome 5 Free";
+  }
+
+  .fa-cloud-sun {
+    margin: auto;
+    font-family: var(--font-title);
+    font-size: rem(40);
+  }
+}
+
 form {
-  margin-bottom: rem(50);
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(100);
+
+  @media (max-width: rem(450)) {
+    margin-bottom: rem(40);
+  }
+
+  #city {
+    padding: rem(5);
+    color: var(--font-color);
+    background-color: #efefef;
+    font-family: var(--font-body);
+    font-size: rem(20);
+    border: rem(3) solid var(--primary-bg);
+    border-radius: rem(5);
+  }
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
+  padding: rem(30);
   text-align: center;
-  width: rem(300);
+  width: fit-content;
+  font-size: rem(24);
+  background-color: cornflowerblue;
+  border-radius: rem(10);
 
   .primary-weather-data {
     display: flex;
     flex-direction: column;
     gap: rem(5);
-    margin-bottom: rem(20);
+    margin-bottom: rem(30);
+
+    h5 {
+      font-size: rem(22);
+    }
 
     .location {
       display: flex;
       justify-content: center;
+      font-size: rem(30);
+    }
+
+    .temperature {
+      font-size: rem(50);
     }
 
     .max-min-temperatures {
@@ -61,8 +121,53 @@ main {
 
   .secondary-weather-data {
     display: grid;
-    grid-template-columns: repeat(2, rem(75));
-    gap: rem(5);
+    grid-template-columns: repeat(1fr);
+    gap: rem(40);
     margin: 0 auto;
+
+    @media (min-width: rem(450)) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: rem(800)) {
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin: auto;
+      }
+    }
+
+    label {
+      font-size: rem(20);
+    }
+
+    h5 {
+      font-size: rem(24);
+    }
+
+    img {
+      margin: auto auto auto 0;
+      width: rem(40);
+      height: rem(40);
+    }
+
+    .feels-like-container,
+    .humidity-container,
+    .wind-speed-container,
+    .pressure-container {
+      display: flex;
+      gap: rem(5);
+    }
   }
+}
+// https://cdn-icons-png.flaticon.com/512/481/481453.png
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: rem(50);
+  background-color: var(--primary-bg);
 }
